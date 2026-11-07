@@ -8,7 +8,7 @@ export const site = {
 
   // WhatsApp number in international format, digits only, e.g. '919876543210'.
   // While this is empty, the WhatsApp buttons fall back to the booking link.
-  whatsapp: '',
+  whatsapp: '918610539926',
   whatsappMessage: "Hi Sumit, I saw your site and I'm interested in order software for my textile business.",
 
   booking: 'https://cal.com/sumit-jain-s1u8fb/15min',
