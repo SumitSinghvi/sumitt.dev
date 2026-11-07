@@ -38,10 +38,10 @@ const field = 'mt-1 w-full rounded-xl bg-surface border border-white/10 px-4 py-
       if (!res.ok) throw new Error();
       form.reset();
       status!.className = 'text-sm min-h-5 text-green-400';
-      status!.textContent = "Thanks! Your message was sent. We'll reply within a day.";
+      status!.textContent = "Thanks! Your message was sent. I'll reply within a day.";
     } catch {
       status!.className = 'text-sm min-h-5 text-red-400';
-      status!.textContent = 'Something went wrong. Please email us directly instead.';
+      status!.textContent = 'Something went wrong. Please email me directly instead.';
     } finally {
       btn.disabled = false;
     }

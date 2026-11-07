@@ -1,4 +1,4 @@
-# Skycraft
+# Sumitt.dev
 
 Astro + Tailwind portfolio/agency site. Edit brand, links, services and projects in `src/data/site.ts`.
 
