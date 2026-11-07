@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { site, services, projects } from '../data/site';
+---
+<Base>
+  <Header />
+  <main>
+    <section class="mx-auto max-w-6xl px-5 pt-24 pb-28">
+      <h1 class="reveal text-5xl md:text-7xl font-bold tracking-tight max-w-3xl">
+        {site.tagline}
+      </h1>
+      <p class="reveal mt-6 max-w-xl text-lg text-muted">
+        {site.description}
+      </p>
+      <div class="reveal mt-10 flex gap-4">
+        <a href={site.booking} class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">Book a call</a>
+        <a href="#work" class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">See our work</a>
+      </div>
+    </section>
+
+    <section id="work" class="mx-auto max-w-6xl px-5 py-20">
+      <h2 class="text-3xl font-semibold mb-10">Selected work</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        {projects.map((p) => (
+          <a href={p.url} class="reveal group block rounded-2xl bg-surface overflow-hidden border border-white/5">
+            <img src={p.image} alt={p.title} width="640" height="400" loading="lazy" decoding="async"
+                 class="aspect-[8/5] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="p-5">
+              <p class="text-xs uppercase tracking-wider text-accent">{p.category}</p>
+              <h3 class="mt-1 text-xl font-medium">{p.title}</h3>
+              <p class="mt-2 text-sm text-muted">{p.text}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section id="services" class="mx-auto max-w-6xl px-5 py-20">
+      <h2 class="text-3xl font-semibold mb-10">Services</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        {services.map((s) => (
+          <div class="reveal rounded-2xl bg-surface p-6 border border-white/5">
+            <h3 class="text-xl font-medium">{s.title}</h3>
+            <p class="mt-2 text-muted">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-3xl px-5 py-24 text-center">
+      <h2 class="reveal text-4xl font-semibold">Let's build something great</h2>
+      <p class="reveal mt-4 text-muted">Tell us about your project and we'll get back within a day.</p>
+      <div class="reveal mt-10 text-left"><ContactForm /></div>
+      <div class="reveal mt-8 flex justify-center gap-4 flex-wrap">
+        <a href={`mailto:${site.email}`} class="rounded-full bg-accent px-6 py-3 font-medium text-bg">{site.email}</a>
+        <a href={site.social.linkedin} class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">LinkedIn</a>
+        <a href={site.social.twitter} class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">X / Twitter</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

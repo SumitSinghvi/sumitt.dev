@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0d12;
+  --color-surface: #141824;
+  --color-text: #e8ecf4;
+  --color-muted: #9aa4b8;
+  --color-accent: #6ea8ff;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html { background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); scroll-behavior: smooth; }
+
+/* CSS-only scroll reveal: transform/opacity only, no JS shipped */
+@keyframes reveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.reveal { animation: reveal .7s ease-out both; }
+@supports (animation-timeline: view()) {
+  .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+}
+@media (prefers-reduced-motion: reduce) { .reveal { animation: none; } html { scroll-behavior: auto; } }
