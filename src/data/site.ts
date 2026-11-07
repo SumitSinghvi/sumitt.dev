@@ -24,8 +24,7 @@ export const projects = [
     title: 'Shreenathji Textile',
     category: 'Web + Android app',
     text: 'Field sales and order system for textile wholesalers in Surat and Ahmedabad: offline-first order taking, live GPS tracking, and printable challans.',
-    image: '/work/shreenathji.webp',
-    alt: 'Order pipeline dashboard with client details blurred',
+    mock: 'orders',
     tags: ['Android (Kotlin)', 'TypeScript', 'Supabase', 'Postgres'],
     url: '', // add a public demo link here when you have one
   },

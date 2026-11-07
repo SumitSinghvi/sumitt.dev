@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import OrdersMock from '../components/OrdersMock.astro';
 import { site, services, projects } from '../data/site';
 ---
 <Base>
@@ -28,8 +29,11 @@ import { site, services, projects } from '../data/site';
           return (
             <Tag {...(p.url ? { href: p.url, target: '_blank', rel: 'noopener' } : {})}
                  class="reveal group block rounded-2xl bg-surface overflow-hidden border border-white/5">
-              <img src={p.image} alt={p.alt ?? p.title} width="1280" height="696" loading="lazy" decoding="async"
-                   class="aspect-[16/9] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              <div class="aspect-[16/9] w-full overflow-hidden">
+                {p.mock === 'orders'
+                  ? <OrdersMock />
+                  : <img src={p.image} alt={p.alt ?? p.title} width="1280" height="720" loading="lazy" decoding="async" class="h-full w-full object-cover object-top" />}
+              </div>
               <div class="p-5">
                 <p class="text-xs uppercase tracking-wider text-accent">{p.category}</p>
                 <h3 class="mt-1 text-xl font-medium">{p.title}</h3>
