@@ -15,7 +15,7 @@ import { site, services, projects } from '../data/site';
         {site.description}
       </p>
       <div class="reveal mt-10 flex gap-4">
-        <a href={site.x} target="_blank" rel="noopener" class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">Message me on X</a>
+        <a href={site.booking} target="_blank" rel="noopener" class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">Book a call</a>
         <a href="#work" class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">See my work</a>
       </div>
     </section>
@@ -51,9 +51,10 @@ import { site, services, projects } from '../data/site';
 
     <section id="contact" class="mx-auto max-w-3xl px-5 py-24 text-center">
       <h2 class="reveal text-4xl font-semibold">Let's build something great</h2>
-      <p class="reveal mt-4 text-muted">Tell me about your project. The fastest way to reach me is a DM on X.</p>
+      <p class="reveal mt-4 text-muted">Tell me about your project. Book a quick call, or DM me on X or email if you prefer.</p>
       <div class="reveal mt-8 flex justify-center flex-wrap gap-4">
-        <a href={site.x} target="_blank" rel="noopener" class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">DM {site.xHandle} on X</a>
+        <a href={site.booking} target="_blank" rel="noopener" class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">Book a 15-min call</a>
+        <a href={site.x} target="_blank" rel="noopener" class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">DM {site.xHandle} on X</a>
         <a href={site.x} data-u={site.emailUser} data-d={site.emailDomain} class="email-btn rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">Email me</a>
       </div>
     </section>

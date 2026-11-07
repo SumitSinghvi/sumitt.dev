@@ -5,6 +5,7 @@ export const site = {
   description: 'Sumitt.dev is a freelance web design and development studio crafting fast, polished websites and digital products.',
   url: 'https://sumitt.dev',
   // Contact: DM me on X.
+  booking: 'https://cal.com/sumit-jain-s1u8fb/15min',
   x: 'https://x.com/codebysumit',
   xHandle: '@codebysumit',
   // Split so the address isn't sitting in the page HTML for spam bots to scrape.
