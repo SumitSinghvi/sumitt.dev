@@ -7,6 +7,9 @@ export const site = {
   // Contact: DM me on X.
   x: 'https://x.com/codebysumit',
   xHandle: '@codebysumit',
+  // Split so the address isn't sitting in the page HTML for spam bots to scrape.
+  emailUser: 'sumitjaindev',
+  emailDomain: 'gmail.com',
 };
 
 export const services = [
