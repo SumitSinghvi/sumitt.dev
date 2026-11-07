@@ -1,13 +1,15 @@
 ---
-import { site } from '../data/site';
+import { site, contactLink, contactLabel } from '../data/site';
 ---
-<header class="sticky top-0 z-10 backdrop-blur bg-bg/70 border-b border-white/5">
-  <nav class="mx-auto max-w-6xl flex items-center justify-between px-5 py-4">
+<header class="sticky top-0 z-10 backdrop-blur bg-bg/80 border-b border-white/5">
+  <nav class="mx-auto max-w-6xl flex items-center justify-between gap-4 px-5 py-4">
     <a href="/" class="text-lg font-semibold tracking-tight">{site.name}</a>
-    <div class="flex gap-6 text-sm text-muted">
-      <a href="#work" class="hover:text-text">Work</a>
-      <a href="#services" class="hover:text-text">Services</a>
-      <a href="#contact" class="hover:text-text">Contact</a>
+    <div class="hidden md:flex gap-6 text-sm text-muted">
+      <a href="/#features" class="hover:text-text">Features</a>
+      <a href="/#packages" class="hover:text-text">Packages</a>
+      <a href="/shreenathji" class="hover:text-text">Case study</a>
+      <a href="/#contact" class="hover:text-text">Contact</a>
     </div>
+    <a href={contactLink} target="_blank" rel="noopener" class="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-bg hover:opacity-90">{contactLabel}</a>
   </nav>
 </header>
