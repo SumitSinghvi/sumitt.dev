@@ -7,14 +7,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && npx wrangler pages deploy dist --project-name sumitt-dev"
+    "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.7",
-    "tailwindcss": "^4.3.5",
-    "@tailwindcss/vite": "^4.3.5"
+    "tailwindcss": "^4.3.5"
   },
   "engines": {
     "node": ">=22"
+  },
+  "devDependencies": {
+    "wrangler": "^4.158.0"
   }
 }

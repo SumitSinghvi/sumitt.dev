@@ -8,17 +8,18 @@ npm run dev      # local preview
 npm run build    # outputs to dist/
 ```
 
-## Deploy to Cloudflare Pages (Git integration)
+## Deploy to Cloudflare (Workers static assets)
 
 1. Push this repo to GitHub.
-2. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git.
-3. Select the repo, then set:
-   - Framework preset: Astro
+2. Cloudflare dashboard → Workers & Pages → Create → Import a repository, then select this repo.
+3. Set:
+   - Project/Worker name: `sumitt-dev` (must match `name` in `wrangler.jsonc`)
    - Build command: `npm run build`
-   - Build output directory: `dist`
-   - Environment variable (optional): `NODE_VERSION=22`
-4. Save and Deploy. Every push to `main` redeploys; other branches get preview URLs.
-5. Add your domain under the project's Custom domains tab.
+   - Deploy command: `npx wrangler deploy`
+4. Save and Deploy. Every push to `main` redeploys.
+5. Add your domain under the Worker's Settings → Domains & Routes → Add → Custom domain.
+
+Config lives in `wrangler.jsonc`; headers and caching in `public/_headers`.
 
 ## Deploy from the CLI
 
