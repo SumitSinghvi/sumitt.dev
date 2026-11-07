@@ -30,5 +30,5 @@ npm run deploy
 
 ## Before going live
 
-- Set `site.url` and `site.formEndpoint` (Formspree) in `src/data/site.ts`.
-- Replace placeholder email, booking and social links and the sample projects.
+- Set `site.url` in `src/data/site.ts`.
+- Replace the sample projects with your real work.

@@ -4,14 +4,9 @@ export const site = {
   tagline: 'I design and build fast, beautiful websites.',
   description: 'Sumitt.dev is a freelance web design and development studio crafting fast, polished websites and digital products.',
   url: 'https://sumitt.dev',
-  email: 'hello@sumitt.dev',
-  // Create a free form at https://formspree.io and paste its endpoint here.
-  formEndpoint: 'https://formspree.io/f/YOUR_FORM_ID',
-  booking: 'https://cal.com/your-name',
-  social: {
-    linkedin: 'https://linkedin.com/in/your-name',
-    twitter: 'https://x.com/your-handle',
-  },
+  // Contact: DM me on X.
+  x: 'https://x.com/codebysumit',
+  xHandle: '@codebysumit',
 };
 
 export const services = [

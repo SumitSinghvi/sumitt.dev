@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ContactForm from '../components/ContactForm.astro';
 import { site, services, projects } from '../data/site';
 ---
 <Base>
@@ -16,7 +15,7 @@ import { site, services, projects } from '../data/site';
         {site.description}
       </p>
       <div class="reveal mt-10 flex gap-4">
-        <a href={site.booking} class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">Book a call</a>
+        <a href={site.x} target="_blank" rel="noopener" class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">Message me on X</a>
         <a href="#work" class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">See my work</a>
       </div>
     </section>
@@ -52,12 +51,9 @@ import { site, services, projects } from '../data/site';
 
     <section id="contact" class="mx-auto max-w-3xl px-5 py-24 text-center">
       <h2 class="reveal text-4xl font-semibold">Let's build something great</h2>
-      <p class="reveal mt-4 text-muted">Tell me about your project and I'll get back within a day.</p>
-      <div class="reveal mt-10 text-left"><ContactForm /></div>
-      <div class="reveal mt-8 flex justify-center gap-4 flex-wrap">
-        <a href={`mailto:${site.email}`} class="rounded-full bg-accent px-6 py-3 font-medium text-bg">{site.email}</a>
-        <a href={site.social.linkedin} class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">LinkedIn</a>
-        <a href={site.social.twitter} class="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">X / Twitter</a>
+      <p class="reveal mt-4 text-muted">Tell me about your project. The fastest way to reach me is a DM on X.</p>
+      <div class="reveal mt-8 flex justify-center">
+        <a href={site.x} target="_blank" rel="noopener" class="rounded-full bg-accent px-6 py-3 font-medium text-bg hover:opacity-90">DM {site.xHandle} on X</a>
       </div>
     </section>
   </main>
