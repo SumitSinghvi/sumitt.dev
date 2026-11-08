@@ -25,10 +25,10 @@ export const contactLink = site.whatsapp
 export const contactLabel = site.whatsapp ? 'Chat on WhatsApp' : 'Book a free call';
 
 export const pains = [
-  { title: 'Poor signal in the market', text: 'Orders keep working offline and sync the moment the phone is back online, even inside multi-storey markets.' },
-  { title: 'Orders on paper and WhatsApp', text: 'Every order goes into one order book, with the buyer, fabric, meters and amount in the same place.' },
-  { title: 'Challans written by hand', text: 'Print a clean PDF challan on the spot, or share it with the party on WhatsApp.' },
-  { title: "Not sure where your team is", text: 'See your sales reps on a live map, plan their daily beat, and approve orders as they come in.' },
+  { icon: 'wifi-off', title: 'Poor signal in the market', text: 'Orders keep working offline and sync the moment the phone is back online, even inside multi-storey markets.' },
+  { icon: 'clipboard', title: 'Orders on paper and WhatsApp', text: 'Every order goes into one order book, with the buyer, fabric, meters and amount in the same place.' },
+  { icon: 'file', title: 'Challans written by hand', text: 'Print a clean PDF challan on the spot, or share it with the party on WhatsApp.' },
+  { icon: 'pin', title: 'Not sure where your team is', text: 'See your sales reps on a live map, plan their daily beat, and approve orders as they come in.' },
 ];
 
 export const steps = [
@@ -68,3 +68,5 @@ export const featureList = [
   'Over-the-air app updates',
   'Licence-based access, tied to each device',
 ];
+
+export const orbit = ['Orders', 'Challans', 'WhatsApp', 'Live GPS', 'Reports', 'Works offline'];

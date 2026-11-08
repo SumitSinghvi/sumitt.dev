@@ -1,15 +1,17 @@
 ---
 import { site, contactLink, contactLabel } from '../data/site';
 ---
-<header class="sticky top-0 z-10 backdrop-blur bg-bg/80 border-b border-white/5">
-  <nav class="mx-auto max-w-6xl flex items-center justify-between gap-4 px-5 py-4">
-    <a href="/" class="text-lg font-semibold tracking-tight">{site.name}</a>
-    <div class="hidden md:flex gap-6 text-sm text-muted">
-      <a href="/#features" class="hover:text-text">Features</a>
-      <a href="/#packages" class="hover:text-text">Packages</a>
-      <a href="/shreenathji" class="hover:text-text">Case study</a>
-      <a href="/#contact" class="hover:text-text">Contact</a>
+<header class="sticky top-0 z-20 backdrop-blur-md bg-bg/80 border-b border-line">
+  <nav class="mx-auto max-w-6xl flex items-center justify-between gap-4 px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2 text-lg font-semibold tracking-tight">
+      <span class="grid h-7 w-7 place-items-center rounded-lg bg-ink text-accent text-sm">S</span>{site.name}
+    </a>
+    <div class="hidden md:flex gap-7 text-sm text-muted">
+      <a href="/#features" class="hover:text-ink">Features</a>
+      <a href="/#packages" class="hover:text-ink">Packages</a>
+      <a href="/shreenathji" class="hover:text-ink">Case study</a>
+      <a href="/#contact" class="hover:text-ink">Contact</a>
     </div>
-    <a href={contactLink} target="_blank" rel="noopener" class="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-bg hover:opacity-90">{contactLabel}</a>
+    <a href={contactLink} target="_blank" rel="noopener" class="btn btn-ink !py-2 !px-4 !text-sm">{contactLabel}</a>
   </nav>
 </header>

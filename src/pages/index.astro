@@ -3,58 +3,66 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import OrdersMock from '../components/OrdersMock.astro';
+import HeroStage from '../components/HeroStage.astro';
+import Orbit from '../components/Orbit.astro';
+import Icon from '../components/Icon.astro';
 import { site, contactLink, contactLabel, pains, steps, packages, featureList } from '../data/site';
-const btn = 'rounded-full px-6 py-3 font-semibold';
 ---
 <Base>
   <Header />
   <main>
     <!-- Hero -->
-    <section class="weave">
-      <div class="mx-auto max-w-6xl px-5 pt-20 pb-24 grid gap-12 md:grid-cols-2 md:items-center">
-        <div>
-          <p class="reveal text-sm uppercase tracking-widest text-accent">For textile wholesalers &amp; agents</p>
-          <h1 class="reveal mt-4 text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            Take orders. Print challans. Know where your team is.
-          </h1>
-          <p class="reveal mt-6 text-lg text-muted max-w-xl">
-            Order and field-sales software built for textile markets in Surat and Ahmedabad. It works offline, prints challans on the spot, and keeps your whole sales team on one screen.
-          </p>
-          <div class="reveal mt-9 flex flex-wrap gap-4">
-            <a href={contactLink} target="_blank" rel="noopener" class={`${btn} bg-accent text-bg hover:opacity-90`}>{contactLabel}</a>
-            <a href="/shreenathji" class={`${btn} border border-white/15 hover:bg-white/5`}>See a real system</a>
-          </div>
+    <section class="rings overflow-hidden">
+      <div class="mx-auto max-w-6xl px-5 pt-20 pb-24 text-center">
+        <span class="reveal pill-label"><i class="h-2 w-2 rounded-full bg-accent"></i>For textile wholesalers &amp; agents</span>
+        <h1 class="reveal mx-auto mt-6 max-w-3xl text-4xl md:text-6xl leading-[1.08]">
+          Take orders. Print challans. <b>Know where your team is.</b>
+        </h1>
+        <p class="reveal mx-auto mt-6 max-w-2xl text-lg text-muted">
+          Order and field-sales software built for textile markets in Surat and Ahmedabad. It works offline, prints challans on the spot, and keeps your whole sales team on one screen.
+        </p>
+        <div class="reveal mt-9 flex flex-wrap justify-center gap-3">
+          <a href={contactLink} target="_blank" rel="noopener" class="btn btn-ink">{contactLabel}</a>
+          <a href="/shreenathji" class="btn btn-ghost">See a real system</a>
         </div>
-        <div class="reveal rounded-2xl overflow-hidden border border-white/10 aspect-[16/10]">
-          <OrdersMock />
-        </div>
+        <HeroStage />
       </div>
     </section>
 
     <!-- Pain points -->
-    <section id="features" class="mx-auto max-w-6xl px-5 py-20">
-      <h2 class="text-3xl font-semibold">Built for how textile markets actually work</h2>
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
+    <section id="features" class="mx-auto max-w-6xl px-5 py-24">
+      <h2 class="reveal mx-auto max-w-2xl text-center text-3xl md:text-4xl">Built for how textile markets <b>actually work</b></h2>
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
         {pains.map((p) => (
-          <div class="reveal rounded-2xl bg-surface p-6 border border-white/5">
-            <h3 class="text-xl font-medium">{p.title}</h3>
+          <div class="reveal card p-7">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-tint text-accent-ink"><Icon name={p.icon} /></span>
+            <h3 class="mt-5 text-xl font-medium">{p.title}</h3>
             <p class="mt-2 text-muted">{p.text}</p>
           </div>
         ))}
       </div>
-      <ul class="mt-10 flex flex-wrap gap-2">
-        {featureList.map((f) => <li class="rounded-full border border-white/10 px-4 py-1.5 text-sm text-muted">{f}</li>)}
-      </ul>
+    </section>
+
+    <!-- Diagram -->
+    <section class="bg-sage/70 border-y border-line">
+      <div class="mx-auto max-w-6xl px-5 py-24 text-center">
+        <h2 class="reveal mx-auto max-w-2xl text-3xl md:text-4xl">One system, from the <b>market floor</b> to your desk</h2>
+        <p class="reveal mx-auto mt-4 max-w-xl text-muted">Everything your team does on the road shows up in one place for you.</p>
+        <div class="reveal"><Orbit /></div>
+        <ul class="mt-12 flex flex-wrap justify-center gap-2">
+          {featureList.map((f) => <li class="rounded-full border border-line bg-white/70 px-4 py-1.5 text-sm text-muted">{f}</li>)}
+        </ul>
+      </div>
     </section>
 
     <!-- How it works -->
-    <section class="mx-auto max-w-6xl px-5 py-20">
-      <h2 class="text-3xl font-semibold">How it works</h2>
-      <ol class="mt-10 grid gap-6 md:grid-cols-3">
+    <section class="mx-auto max-w-6xl px-5 py-24">
+      <h2 class="reveal text-center text-3xl md:text-4xl">How it <b>works</b></h2>
+      <ol class="mt-12 grid gap-5 md:grid-cols-3">
         {steps.map((s, i) => (
-          <li class="reveal rounded-2xl bg-surface p-6 border border-white/5">
-            <span class="text-accent font-mono text-sm">0{i + 1}</span>
-            <h3 class="mt-2 text-xl font-medium">{s.title}</h3>
+          <li class="reveal card p-7">
+            <span class="grid h-9 w-9 place-items-center rounded-full bg-ink text-sm font-semibold text-accent">{i + 1}</span>
+            <h3 class="mt-5 text-xl font-medium">{s.title}</h3>
             <p class="mt-2 text-muted">{s.text}</p>
           </li>
         ))}
@@ -62,48 +70,50 @@ const btn = 'rounded-full px-6 py-3 font-semibold';
     </section>
 
     <!-- Packages -->
-    <section id="packages" class="mx-auto max-w-6xl px-5 py-20">
-      <h2 class="text-3xl font-semibold">Packages</h2>
-      <p class="mt-3 text-muted">A one-time setup plus a small monthly fee for support and updates. Message me for a quote that fits your business.</p>
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        {packages.map((p) => (
-          <div class={`reveal rounded-2xl p-6 border ${p.highlight ? 'border-accent bg-surface' : 'border-white/5 bg-surface'}`}>
-            <h3 class="text-xl font-semibold">{p.name}</h3>
-            <p class="text-sm text-accent mt-1">{p.tagline}</p>
-            <ul class="mt-5 grid gap-2 text-sm text-muted">
-              {p.features.map((f) => <li class="flex gap-2"><span class="text-accent">✓</span>{f}</li>)}
-            </ul>
-            <a href={contactLink} target="_blank" rel="noopener" class="mt-6 inline-block rounded-full border border-white/15 px-5 py-2 text-sm hover:bg-white/5">Get a quote</a>
-          </div>
-        ))}
+    <section id="packages" class="bg-tint/60 border-y border-line">
+      <div class="mx-auto max-w-6xl px-5 py-24">
+        <h2 class="reveal text-center text-3xl md:text-4xl"><b>Packages</b></h2>
+        <p class="mx-auto mt-4 max-w-xl text-center text-muted">A one-time setup plus a small monthly fee for support and updates. Message me for a quote that fits your business.</p>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          {packages.map((p) => (
+            <div class={`reveal card p-7 ${p.highlight ? '!border-accent ring-2 ring-accent/30' : ''}`}>
+              <h3 class="text-xl font-semibold">{p.name}</h3>
+              <p class="mt-1 text-sm text-accent-ink">{p.tagline}</p>
+              <ul class="mt-6 grid gap-2.5 text-sm text-muted">
+                {p.features.map((f) => <li class="flex gap-2"><span class="text-accent-ink">✓</span>{f}</li>)}
+              </ul>
+              <a href={contactLink} target="_blank" rel="noopener" class={`btn mt-7 ${p.highlight ? 'btn-ink' : 'btn-ghost'} !py-2.5 !text-sm`}>Get a quote</a>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
     <!-- Case study -->
-    <section class="mx-auto max-w-6xl px-5 py-20">
-      <h2 class="text-3xl font-semibold">Already running in the market</h2>
-      <a href="/shreenathji" class="reveal mt-10 grid md:grid-cols-2 rounded-2xl bg-surface border border-white/5 overflow-hidden group">
-        <div class="aspect-[16/10] md:aspect-auto md:min-h-72"><OrdersMock /></div>
-        <div class="p-8 self-center">
-          <p class="text-xs uppercase tracking-wider text-accent">Case study</p>
-          <h3 class="mt-1 text-2xl font-semibold">Shreenathji Textile</h3>
+    <section class="mx-auto max-w-6xl px-5 py-24">
+      <h2 class="reveal text-center text-3xl md:text-4xl">Already running <b>in the market</b></h2>
+      <a href="/shreenathji" class="reveal card mt-12 grid md:grid-cols-2 overflow-hidden group">
+        <div class="aspect-[16/10] md:aspect-auto md:min-h-80"><OrdersMock /></div>
+        <div class="p-8 md:p-10 self-center">
+          <p class="text-xs uppercase tracking-wider text-accent-ink">Case study</p>
+          <h3 class="mt-2 text-2xl font-semibold">Shreenathji Textile</h3>
           <p class="mt-3 text-muted">A field sales and order system for textile wholesalers: an offline-first Android app, a manager dashboard, live GPS tracking and printable challans.</p>
-          <span class="mt-5 inline-block text-accent group-hover:underline">Read the case study →</span>
+          <span class="mt-6 inline-block font-medium text-accent-ink group-hover:underline">Read the case study →</span>
         </div>
       </a>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="weave">
+    <section id="contact" class="rings border-t border-line">
       <div class="mx-auto max-w-3xl px-5 py-24 text-center">
-        <h2 class="reveal text-4xl font-semibold">Let's make your orders easier</h2>
+        <h2 class="reveal text-3xl md:text-5xl">Let's make your <b>orders easier</b></h2>
         <p class="reveal mt-4 text-muted">Tell me how you take orders today. I'll show you how it could work, with no obligation.</p>
-        <div class="reveal mt-8 flex justify-center flex-wrap gap-4">
-          <a href={contactLink} target="_blank" rel="noopener" class={`${btn} bg-accent text-bg hover:opacity-90`}>{contactLabel}</a>
-          {site.whatsapp && <a href={site.booking} target="_blank" rel="noopener" class={`${btn} border border-white/15 hover:bg-white/5`}>Book a 15-min call</a>}
-          <a href={site.x} data-u={site.emailUser} data-d={site.emailDomain} class={`email-btn ${btn} border border-white/15 hover:bg-white/5`}>Email me</a>
+        <div class="reveal mt-9 flex justify-center flex-wrap gap-3">
+          <a href={contactLink} target="_blank" rel="noopener" class="btn btn-ink">{contactLabel}</a>
+          {site.whatsapp && <a href={site.booking} target="_blank" rel="noopener" class="btn btn-ghost">Book a 15-min call</a>}
+          <a href={site.x} data-u={site.emailUser} data-d={site.emailDomain} class="email-btn btn btn-ghost">Email me</a>
         </div>
-        <p class="reveal mt-6 text-sm text-muted">Or message me on <a class="underline hover:text-text" href={site.x} target="_blank" rel="noopener">X ({site.xHandle})</a></p>
+        <p class="reveal mt-6 text-sm text-muted">Or message me on <a class="underline hover:text-ink" href={site.x} target="_blank" rel="noopener">X ({site.xHandle})</a></p>
       </div>
     </section>
   </main>
