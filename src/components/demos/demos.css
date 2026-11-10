@@ -1,0 +1,27 @@
+.dm .ss-stage { background: var(--ss-well); overflow: hidden; }
+.dm-phone { position: absolute; top: 28px; left: 50%; margin-left: -150px; box-shadow: var(--ss-shadow-satellite); }
+.dm-app { padding: 60px 18px 0; height: 100%; background: var(--ss-surface); display: flex; flex-direction: column; gap: 10px; }
+.dm-app-top { display: flex; align-items: center; justify-content: space-between; }
+.dm-app-title { font-size: 20px; font-weight: 700; color: var(--ss-text-strong); }
+.dm-sub { font-size: 14px; color: var(--ss-text); }
+.dm-app .ss-badge { font-size: 13px; }
+.dm-list { display: flex; flex-direction: column; }
+
+.dm-paper { position: absolute; top: 28px; left: 50%; width: 300px; margin-left: -150px; padding: 20px; border-radius: 12px; background: var(--ss-surface); box-shadow: var(--ss-shadow-hero); display: flex; flex-direction: column; gap: 11px; }
+.dm-paper-head { display: flex; justify-content: space-between; align-items: center; }
+.dm-paper-title { font-size: 15px; font-weight: 600; color: var(--ss-text-strong); }
+.dm-paper-no { font-size: 12px; color: var(--ss-text); }
+.dm-paper-party { font-size: 13px; color: var(--ss-text-strong); }
+.dm-lines { display: flex; flex-direction: column; border-top: 1px solid var(--ss-line); }
+.dm-line { display: grid; grid-template-columns: 1fr 56px 76px; gap: 8px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--ss-line-faint); font-size: 12px; }
+.dm-total { font-weight: 600; border-bottom: 0; margin-top: 4px; padding-top: 12px; }
+.dm-amt { text-align: right; }
+.dm-dim { color: var(--ss-text); }
+.dm-share { width: 100%; justify-content: center; margin-top: 14px; }
+.dm-btn-in { display: inline-flex; align-items: center; gap: 6px; }
+.dm-rest { position: absolute; width: 1px; height: 1px; }
+
+.dm-win { position: absolute; top: 28px; left: 24px; width: 312px; height: 300px; background: var(--ss-surface); border-radius: 10px; box-shadow: var(--ss-shadow-hero); }
+.dm-win-body { padding: 14px 8px 0; background: var(--ss-surface); height: 100%; display: flex; flex-direction: column; gap: 6px; }
+.dm-win-body > .dm-app-title { padding: 0 12px 6px; font-size: 15px; }
+.dm-rep-meta { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 4px; margin-left: 8px; font-size: 12px; }

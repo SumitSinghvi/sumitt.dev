@@ -1,21 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0e0c09;
-  --color-surface: #17130d;
-  --color-text: #f3eee4;
-  --color-muted: #a69d8b;
-  --color-accent: #f5b342;
+  --color-bg: #faf8f4;
+  --color-surface: #ffffff;
+  --color-text: #1b1914;
+  --color-muted: #6a655a;
+  --color-accent: #2563eb;
+  --color-ink: #1b1914;
+  --color-line: #e8e3d8;
+  --color-well: #efeeec;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 html { background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); scroll-behavior: smooth; }
 
-/* Subtle woven-fabric texture, pure CSS */
+/* Soft woven-fabric texture, pure CSS */
 .weave {
   background-image:
-    repeating-linear-gradient(45deg, rgba(245,179,66,.035) 0 1px, transparent 1px 9px),
-    repeating-linear-gradient(-45deg, rgba(245,179,66,.035) 0 1px, transparent 1px 9px);
+    repeating-linear-gradient(45deg, rgba(27,25,20,.035) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(-45deg, rgba(27,25,20,.035) 0 1px, transparent 1px 9px);
 }
 
 /* CSS-only scroll reveal: transform/opacity only, no JS shipped */
