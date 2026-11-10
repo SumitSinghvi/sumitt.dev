@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import OrdersMock from '../components/OrdersMock.astro';
+import { OrdersDemo } from '../components/orders-demo/OrdersDemo';
 import { site, contactLink, contactLabel, pains, steps, packages, featureList } from '../data/site';
 const btn = 'rounded-full px-6 py-3 font-semibold';
 ---
@@ -25,8 +26,8 @@ const btn = 'rounded-full px-6 py-3 font-semibold';
             <a href="/shreenathji" class={`${btn} border border-white/15 hover:bg-white/5`}>See a real system</a>
           </div>
         </div>
-        <div class="reveal rounded-2xl overflow-hidden border border-white/10 aspect-[16/10]">
-          <OrdersMock />
+        <div class="reveal rounded-2xl overflow-hidden border border-white/10 min-h-[340px]" style="background:#efeeec">
+          <OrdersDemo client:only="react" />
         </div>
       </div>
     </section>

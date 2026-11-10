@@ -1,0 +1,42 @@
+.od .ss-stage { --gutter: 28px; overflow: hidden; background: var(--ss-well); }
+
+.od-window {
+  position: absolute;
+  top: var(--gutter);
+  left: var(--gutter);
+  width: 470px;
+  height: 400px;
+  background: var(--ss-surface);
+  border-radius: 10px;
+  box-shadow: var(--ss-shadow-hero);
+}
+.od-body { padding: 16px 84px 0 8px; background: var(--ss-surface); height: 100%; }
+.od-head { display: flex; align-items: center; justify-content: space-between; padding: 0 12px 10px; }
+.od-title { font-size: 15px; font-weight: 600; color: var(--ss-text-strong); }
+.od-state { display: inline-flex; margin-left: 8px; }
+.od-new .ss-row__title { font-weight: 500; }
+
+.od-phone {
+  position: absolute;
+  top: 56px;
+  right: var(--gutter);
+  box-shadow: var(--ss-shadow-satellite), 0 30px 50px -20px rgba(50, 50, 93, 0.35);
+}
+.od-app { padding: 64px 20px 0; display: flex; flex-direction: column; gap: 12px; height: 100%; background: var(--ss-surface); }
+.od-app-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.od-app-title { font-size: 22px; font-weight: 700; color: var(--ss-text-strong); }
+.od-field { display: flex; flex-direction: column; gap: 4px; padding: 10px 14px; border-radius: 12px; background: var(--ss-canvas); }
+.od-label { font-size: 12px; color: var(--ss-text); }
+.od-value { font-size: 16px; font-weight: 500; color: var(--ss-text-strong); }
+.od-book { margin-top: 8px; width: 100%; justify-content: center; }
+.od-rest { position: absolute; width: 1px; height: 1px; }
+
+.od .ss-stage[data-layout='compact'] { --gutter: 16px; }
+.od-app .ss-badge { font-size: 14px; }
+.od .ss-stage[data-layout='compact'] .od-window { width: 420px; height: 480px; }
+.od .ss-stage[data-layout='compact'] .od-phone { top: 150px; right: var(--gutter); }
+.od .ss-stage[data-layout='compact'] .od-app { padding-top: 44px; gap: 8px; }
+
+.od-phone { transition: transform 600ms cubic-bezier(0.32, 0.72, 0, 1); }
+.od-phone[data-away] { transform: translateY(105%); }
+.od .ss-stage[data-layout='compact'] .od-field:not(:last-of-type) { display: none; }
